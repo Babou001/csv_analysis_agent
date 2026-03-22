@@ -1,0 +1,136 @@
+# ==================== FICHIERS SENSIBLES ====================
+# CRITIQUE : Ne JAMAIS commit ces fichiers !
+.env
+.env.local
+.env.*.local
+
+# Clés API et credentials
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# ==================== PYTHON ====================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# pyenv
+.python-version
+
+# ==================== IDE ====================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ==================== SYSTÈME ====================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ==================== LOGS ====================
+*.log
+logs/
+*.out
+*.err
+
+# ==================== DONNÉES TEMPORAIRES ====================
+# Fichiers temporaires
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Cache
+.cache/
+*.cache
+
+# ==================== LANGGRAPH / LANGCHAIN ====================
+# Checkpoints LangGraph (si utilisés)
+checkpoints/
+.langgraph/
+
+# LangSmith traces (optionnel)
+.langsmith/
+
+# ==================== PROJET SPÉCIFIQUE ====================
+# Fichiers de test (décommenter si besoin)
+# test_output/
+# *.test.csv
+
+# Données sensibles (adapter selon tes besoins)
+# data/private/
+# data/*.csv

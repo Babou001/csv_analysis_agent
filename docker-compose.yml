@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Service principal : Agent DataFrame
+  agent-dataframe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agent-dataframe
+    ports:
+      - "8501:8501"  # Streamlit
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    volumes:
+      # Monte les données pour persister les uploads
+      - ./data:/app/data
+      # Monte les prompts pour pouvoir les modifier sans rebuild
+      - ./prompts:/app/prompts
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - agent-network
+
+  # (Optionnel) Service pour une future base de données
+  # postgres:
+  #   image: postgres:16-alpine
+  #   container_name: agent-postgres
+  #   environment:
+  #     - POSTGRES_DB=agent_dataframe
+  #     - POSTGRES_USER=agent
+  #     - POSTGRES_PASSWORD=${DB_PASSWORD}
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - agent-network
+
+networks:
+  agent-network:
+    driver: bridge
+
+# volumes:
+#   postgres-data:
